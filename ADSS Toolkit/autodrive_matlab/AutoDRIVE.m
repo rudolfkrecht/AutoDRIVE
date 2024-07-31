@@ -35,8 +35,6 @@ classdef AutoDRIVE < WebSocketServer
             % Parse incoming data
             obj.hunter_1.parse_data(in_data,obj.frontcamera_ax,obj.rearcamera_ax,obj.pointcloud_ax,true);            
             
-            
-
             % Prepare outgoing data
             obj.hunter_1.cosim_mode = 0;
             obj.hunter_1.posX_command = 0;
