@@ -1,4 +1,4 @@
-classdef HunterSE
+classdef HunterSE < handle
     % HunterSE
     % Attributes and methods to store and parse Hunter SE data and commands
 
@@ -39,12 +39,12 @@ classdef HunterSE
             obj.encoder_ticks = cell2mat(textscan(data.V1EncoderTicks,'%d'));
             obj.encoder_angles = cell2mat(textscan(data.V1EncoderAngles,'%d'));
             % IPS
-            obj.position = cell2mat(textscan(data.V1Position,'%d'));
+            obj.position = cell2mat(textscan(data.V1Position,'%f'));
             % IMU
-            obj.orientation_quaternion = cell2mat(textscan(data.V1OrientationQuaternion,'%d'));
-            obj.orientation_euler_angles = cell2mat(textscan(data.V1OrientationEulerAngles,'%d'));
-            obj.angular_velocity = cell2mat(textscan(data.V1AngularVelocity,'%d'));
-            obj.linear_acceleration = cell2mat(textscan(data.V1LinearAcceleration,'%d'));
+            obj.orientation_quaternion = cell2mat(textscan(data.V1OrientationQuaternion,'%f'));
+            obj.orientation_euler_angles = cell2mat(textscan(data.V1OrientationEulerAngles,'%f'));
+            obj.angular_velocity = cell2mat(textscan(data.V1AngularVelocity,'%f'));
+            obj.linear_acceleration = cell2mat(textscan(data.V1LinearAcceleration,'%f'));
             % LIDAR
             obj.lidar_pointcloud = matlab.net.base64decode(data.V1LIDARPointcloud);
             % Cameras
@@ -65,15 +65,15 @@ classdef HunterSE
                 fprintf('Receive Data from Hunter SE:\n')
                 fprintf('--------------------------------\n\n')
                 % Monitor Hunter SE data
-                fprintf('Throttle: %d\n',obj.throttle)
-                fprintf('Steering: %d\n',obj.steering)
+                fprintf('Throttle: %f\n',obj.throttle)
+                fprintf('Steering: %f\n',obj.steering)
                 fprintf('Encoder Ticks: [%d %d]\n',obj.encoder_ticks(1),obj.encoder_ticks(2))
                 fprintf('Encoder Angles: [%d %d]\n',obj.encoder_angles(1),obj.encoder_angles(2))
-                fprintf('Position: [%d %d %d]\n',obj.position(1),obj.position(2),obj.position(3))
-                fprintf('Orientation [Quaternion]: [%d %d %d %d]\n',obj.orientation_quaternion(1),obj.orientation_quaternion(2),obj.orientation_quaternion(3),obj.orientation_quaternion(4))
-                fprintf('Orientation [Euler Angles]: [%d %d %d]\n',obj.orientation_euler_angles(1),obj.orientation_euler_angles(2),obj.orientation_euler_angles(3))
-                fprintf('Angular Velocity: [%d %d %d]\n',obj.angular_velocity(1),obj.angular_velocity(2),obj.angular_velocity(3))
-                fprintf('Linear Acceleration: [%d %d %d]\n',obj.linear_acceleration(1),obj.linear_acceleration(2),obj.linear_acceleration(3))
+                fprintf('Position: [%f %f %f]\n',obj.position(1),obj.position(2),obj.position(3))
+                fprintf('Orientation [Quaternion]: [%f %f %f %f]\n',obj.orientation_quaternion(1),obj.orientation_quaternion(2),obj.orientation_quaternion(3),obj.orientation_quaternion(4))
+                fprintf('Orientation [Euler Angles]: [%f %f %f]\n',obj.orientation_euler_angles(1),obj.orientation_euler_angles(2),obj.orientation_euler_angles(3))
+                fprintf('Angular Velocity: [%f %f %f]\n',obj.angular_velocity(1),obj.angular_velocity(2),obj.angular_velocity(3))
+                fprintf('Linear Acceleration: [%f %f %f]\n',obj.linear_acceleration(1),obj.linear_acceleration(2),obj.linear_acceleration(3))
                 % Visualize camera frames
                 % Front camera
                 imshow(imresize(obj.front_camera_image, 0.5),'Parent',frontcamera_ax);
