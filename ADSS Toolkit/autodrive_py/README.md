@@ -20,27 +20,27 @@ This directory hosts the Python API <code>autodrive.py</code> for AutoDRIVE, whi
     
     - Websocket-related dependencies for communication bridge between [AutoDRIVE Simulator](https://github.com/Tinker-Twins/AutoDRIVE/tree/AutoDRIVE-Simulator) and [AutoDRIVE Devkit](https://github.com/Tinker-Twins/AutoDRIVE/tree/AutoDRIVE-Devkit) (version sensitive):
     
-      | Package | Tested Version |
-      |---------|----------------|
-      | eventlet | 0.33.3 |
-      | Flask | 1.1.1 |
-      | Flask-SocketIO | 4.1.0 |
-      | python-socketio | 4.2.0 |
-      | python-engineio | 3.13.0 |
-      | greenlet | 1.0.0 |
-      | gevent | 21.1.2 |
-      | gevent-websocket | 0.10.1 |
-      | Jinja2 | 3.0.3 |
-      | itsdangerous | 2.0.1 |
-      | werkzeug | 2.0.3 |
+      | Package            | Python 3.8 | Python 3.9 | Python 3.10 |
+      |--------------------|------------|------------|-------------|
+      | eventlet           | 0.33.3     | 0.33.3     | 0.33.3      |
+      | Flask              | 1.1.1      | 1.1.1      | 1.1.1       |
+      | Flask-SocketIO     | 4.1.0      | 4.1.0      | 4.1.0       |
+      | python-socketio    | 4.2.0      | 4.2.0      | 4.2.0       |
+      | python-engineio    | 3.13.0     | 3.13.0     | 3.13.0      |
+      | greenlet           | 1.0.0      | 1.0.0      | 1.1.0       |
+      | gevent             | 21.1.2     | 21.1.2     | 21.12.0     |
+      | gevent-websocket   | 0.10.1     | 0.10.1     | 0.10.1      |
+      | Jinja2             | 3.0.3      | 3.0.3      | 3.0.3       |
+      | itsdangerous       | 2.0.1      | 2.0.1      | 2.0.1       |
+      | werkzeug           | 2.0.3      | 2.0.3      | 2.0.3       |
     
     - Generic dependencies for data processing and visualization (usually any version will do the job):
     
-      | Package | Tested Version |
-      |---------|----------------|
-      | numpy | 1.13.3 |
-      | pillow | 5.1.0 |
-      | opencv-contrib-python | 4.5.1.48 |
+      | Package               | Tested Version |
+      |-----------------------|----------------|
+      | numpy                 | 1.13.3         |
+      | pillow                | 5.1.0          |
+      | opencv-contrib-python | 4.5.1.48       |
   
     - Install dependencies using `requirements.txt` file (use the file specific to your Python version &#8594; check using `python3 --version`):
 
