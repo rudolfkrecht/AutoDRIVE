@@ -1,7 +1,7 @@
 # MATLAB API
 
 <p align="justify">
-This directory hosts the MATLAB API <code>AutoDRIVE.m</code> for AutoDRIVE, which can be used to develop modular autonomous driving algorithms.
+This directory hosts the MATLAB API for AutoDRIVE, which can be used to develop modular as well as end-to-end autonomous driving algorithms.
 </p>
 
 ## SETUP
@@ -25,7 +25,7 @@ This directory hosts the MATLAB API <code>AutoDRIVE.m</code> for AutoDRIVE, whic
 
 Execute AutoDRIVE MATLAB API:
 ```MATLAB
-autodrive = AutoDRIVE(4567)
+autodrive = example_hunter(4567)
 ```
 
 Terminate AutoDRIVE MATLAB API:

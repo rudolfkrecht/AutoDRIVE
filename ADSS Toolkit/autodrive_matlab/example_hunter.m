@@ -1,10 +1,10 @@
-classdef AutoDRIVE < WebSocketServer
-    % AutoDRIVE
+classdef example_hunter < WebSocketServer
+    % AutoDRIVE Hunter SE Example
     % Implements a MATLAB WebSocket client to communicate with AutoDRIVE
     % Simulator
     
     properties
-        hunter_1 = HunterSE;
+        hunter_1 = autodrive_hunter;
         frontcamera_fig = figure(1)
         frontcamera_ax = axes;
         rearcamera_fig = figure(2)
@@ -14,7 +14,7 @@ classdef AutoDRIVE < WebSocketServer
     end
     
     methods
-        function obj = AutoDRIVE(varargin)
+        function obj = example_hunter(varargin)
             %Constructor
             obj@WebSocketServer(varargin{:});
         end
@@ -67,7 +67,7 @@ classdef AutoDRIVE < WebSocketServer
     end
 end
 
-%autodrive = AutoDRIVE(4567)
+%autodrive = example_hunter(4567)
 %autodrive.stop
 %delete(autodrive)
 %clear autodrive

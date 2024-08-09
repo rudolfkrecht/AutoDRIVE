@@ -1,5 +1,5 @@
-classdef HunterSE < handle
-    % HunterSE
+classdef autodrive_hunter < handle
+    % AutoDRIVE Hunter SE API
     % Attributes and methods to store and parse Hunter SE data and commands
 
     properties
