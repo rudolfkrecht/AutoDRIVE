@@ -15,6 +15,7 @@ AutoDRIVE Devkit consists of the following software components:
   - [Simulink API](https://github.com/Tinker-Twins/AutoDRIVE/tree/AutoDRIVE-Devkit/ADSS%20Toolkit/autodrive_simulink)
   - [ROS API](https://github.com/Tinker-Twins/AutoDRIVE/tree/AutoDRIVE-Devkit/ADSS%20Toolkit/autodrive_ros)
   - [ROS 2 API](https://github.com/Tinker-Twins/AutoDRIVE/tree/AutoDRIVE-Devkit/ADSS%20Toolkit/autodrive_ros2)
+  - [Autoware API](https://github.com/Tinker-Twins/AutoDRIVE-Autoware)
 
 - [Smart City Software Stack (SCSS) Toolkit](https://github.com/Tinker-Twins/AutoDRIVE/tree/AutoDRIVE-Devkit/SCSS%20Toolkit)
   - [SCM Server](https://github.com/Tinker-Twins/AutoDRIVE/tree/AutoDRIVE-Devkit/SCSS%20Toolkit/autodrive_scm)
