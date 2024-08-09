@@ -15,7 +15,7 @@ classdef example_hunter < WebSocketServer
     
     methods
         function obj = example_hunter(varargin)
-            %Constructor
+            % Constructor
             obj@WebSocketServer(varargin{:});
         end
     end
@@ -44,7 +44,7 @@ classdef example_hunter < WebSocketServer
             obj.hunter_1.rotY_command = 0;
             obj.hunter_1.rotZ_command = 0;
             obj.hunter_1.rotW_command = 0;
-            obj.hunter_1.throttle_command = 0.4;
+            obj.hunter_1.throttle_command = 1;
             obj.hunter_1.steering_command = 1;
             % Encode outgoing data as a JSON message
             out_data = obj.hunter_1.generate_commands(true);
