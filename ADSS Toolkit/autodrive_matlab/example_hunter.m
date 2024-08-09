@@ -1,6 +1,6 @@
 classdef example_hunter < WebSocketServer
     % AutoDRIVE Hunter SE Example
-    % Implements a MATLAB WebSocket client to communicate with AutoDRIVE
+    % Implements a MATLAB WebSocket server to communicate with AutoDRIVE
     % Simulator
     
     properties
