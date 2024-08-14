@@ -1,20 +1,20 @@
-classdef example_hunter < WebSocketServer
-    % AutoDRIVE Hunter SE Example
+classdef example_rzr < WebSocketServer
+    % AutoDRIVE RZR Example
     % Implements a MATLAB WebSocket server to communicate with AutoDRIVE
     % Simulator
     
     properties
-        hunter_1 = autodrive_hunter;
+        rzr_1 = autodrive_rzr;
         frontcamera_fig = figure(1)
         frontcamera_ax = axes;
         rearcamera_fig = figure(2)
         rearcamera_ax = axes;
-        pointcloud_fig = figure(3)
-        pointcloud_ax = axes;
+        % pointcloud_fig = figure(3)
+        % pointcloud_ax = axes;
     end
     
     methods
-        function obj = example_hunter(varargin)
+        function obj = example_rzr(varargin)
             % Constructor
             obj@WebSocketServer(varargin{:});
         end
@@ -33,21 +33,32 @@ classdef example_hunter < WebSocketServer
             % Recieve and decode incoming JSON message
             in_data = jsondecode(message(13:end-1));
             % Parse incoming data
-            obj.hunter_1.parse_data(in_data,obj.frontcamera_ax,obj.rearcamera_ax,obj.pointcloud_ax,true);            
+            obj.rzr_1.parse_data(in_data,obj.frontcamera_ax,obj.rearcamera_ax,true);            
             
             % Prepare outgoing data
-            obj.hunter_1.cosim_mode = 0;
-            obj.hunter_1.posX_command = 0;
-            obj.hunter_1.posY_command = 0;
-            obj.hunter_1.posZ_command = 0;
-            obj.hunter_1.rotX_command = 0;
-            obj.hunter_1.rotY_command = 0;
-            obj.hunter_1.rotZ_command = 0;
-            obj.hunter_1.rotW_command = 0;
-            obj.hunter_1.throttle_command = 1;
-            obj.hunter_1.steering_command = 1;
+            obj.rzr_1.cosim_mode = 0;
+            obj.rzr_1.posX_command = 0;
+            obj.rzr_1.posY_command = 0;
+            obj.rzr_1.posZ_command = 0;
+            obj.rzr_1.rotX_command = 0;
+            obj.rzr_1.rotY_command = 0;
+            obj.rzr_1.rotZ_command = 0;
+            obj.rzr_1.rotW_command = 0;
+            obj.rzr_1.throttle_command = 0.5;
+            obj.rzr_1.steering_command = 0;
+            obj.rzr_1.brake_command = 0;
+            obj.rzr_1.handbrake_command = 0;
+            obj.rzr_1.headlights_command = 1;
+            obj.rzr_1.env.auto_time = boolean(0);
+            obj.rzr_1.env.time_scale = 60;
+            obj.rzr_1.env.time_of_day = 560;
+            obj.rzr_1.env.weather_id = uint8(3);
+            obj.rzr_1.env.cloud_intensity = 0;
+            obj.rzr_1.env.fog_intensity = 0;
+            obj.rzr_1.env.rain_intensity = 0;
+            obj.rzr_1.env.snow_intensity = 0;
             % Encode outgoing data as a JSON message
-            out_data = obj.hunter_1.generate_commands(true);
+            out_data = obj.rzr_1.generate_commands(true);
             % Transmit outgoing JSON message
             conn.send(out_data);
         end
@@ -67,7 +78,7 @@ classdef example_hunter < WebSocketServer
     end
 end
 
-%autodrive = example_hunter(4567)
+%autodrive = example_rzr(4567)
 %autodrive.stop
 %delete(autodrive)
 %clear autodrive
