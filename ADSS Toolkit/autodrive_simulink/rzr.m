@@ -93,7 +93,6 @@ classdef rzr < handle
                           '","V1 Handbrake":"',num2str(obj.handbrake_command), ...
                           '","V1 Headlights":"',num2str(obj.headlights_command), ...
                           data,'"}]');
-            disp(data)
         end
     end
 end
