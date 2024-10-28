@@ -72,24 +72,6 @@ This directory hosts ROS 2 API (a meta-package), which supports modular algorith
 
 ## USAGE
 
-### Usage with Nigel
-
-- **Bringup:**
-  - **Headless Mode Bringup:**
-    ```bash
-    $ ros2 launch autodrive_nigel simulator_bringup_headless.launch.py
-    ```
-    **[OR]**
-  - **RViz Mode Bringup:**
-    ```bash
-    $ ros2 launch autodrive_nigel simulator_bringup_rviz.launch.py
-    ```
-  
-- **Teleoperation:**
-  ```bash
-  $ ros2 run autodrive_nigel teleop_keyboard
-  ```
-
 ### Usage with F1TENTH
 
   - **Bringup:**
